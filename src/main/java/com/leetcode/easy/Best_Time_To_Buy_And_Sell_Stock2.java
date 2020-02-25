@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.leetcode.ds.easy;
+package com.leetcode.easy;
 
 /**
  * 122. Best Time to Buy and Sell Stock II

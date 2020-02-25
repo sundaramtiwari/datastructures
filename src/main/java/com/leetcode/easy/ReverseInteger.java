@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.leetcode.ds.easy;
+package com.leetcode.easy;
 
 /**
  * 7. Reverse Integer. {@link https://leetcode.com/problems/reverse-integer/}

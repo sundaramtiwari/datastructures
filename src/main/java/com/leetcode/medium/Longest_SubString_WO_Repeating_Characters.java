@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.leetcode.ds.medium;
+package com.leetcode.medium;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.leetcode.ds.hard;
+package com.leetcode.hard;
 
 import java.util.HashMap;
 import java.util.List;

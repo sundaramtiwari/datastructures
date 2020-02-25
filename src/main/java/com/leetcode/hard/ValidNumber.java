@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.leetcode.ds.hard;
+package com.leetcode.hard;
 
 /**
  * 65. Valid Number

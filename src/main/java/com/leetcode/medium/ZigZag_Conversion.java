@@ -1,4 +1,4 @@
-package com.leetcode.ds.medium;
+package com.leetcode.medium;
 
 /**
  *

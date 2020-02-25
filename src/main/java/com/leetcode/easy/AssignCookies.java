@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.leetcode.ds.easy;
+package com.leetcode.easy;
 
 import java.util.Arrays;
 

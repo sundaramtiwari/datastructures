@@ -1,4 +1,4 @@
-package com.leetcode.ds.medium;
+package com.leetcode.medium;
 
 /**
  * 8.  String To Integer
@@ -23,12 +23,11 @@ package com.leetcode.ds.medium;
  * <p>
  * Note: Only the space character ' ' is considered as whitespace character.
  * Assume we are dealing with an environment which could only store integers
- * within the 32-bit signed integer range: [−2^31, 2^31 − 1]. If the numerical
- * value is out of the range of representable values, INT_MAX (2^31 − 1) or
- * INT_MIN (−2^31) is returned.
+ * within the 32-bit signed integer range: [&minus;2^31, 2^31 &minus; 1]. If the numerical
+ * value is out of the range of representable values, INT_MAX (2^31 &minus; 1) or
+ * INT_MIN (&minus;2^31) is returned.
  *
  * @author s0t010t
- *
  */
 public class StringToInteger {
 
@@ -46,48 +45,44 @@ public class StringToInteger {
         StringBuilder sbr = new StringBuilder();
         char[] charArray = str.toCharArray();
 
-        for (int i = 0; i < charArray.length; i++) {
-            char c = charArray[i];
+        for (char c : charArray) {
+            if (digitIdentified || !Character.isWhitespace(c)) {
+                if (!digitIdentified && c == '-') {
+                    digitIdentified = true;
+                    sbr.append(c);
 
-            if (!digitIdentified && Character.isWhitespace(c)) {
-                continue;
+                } else if (!digitIdentified && c == '+') {
+                    digitIdentified = true;
 
-            } else if (!digitIdentified && c == '-') {
-                digitIdentified = true;
-                sbr.append(c);
-
-            } else if (!digitIdentified && c == '+') {
-                digitIdentified = true;
-                continue;
-
-            } else if (Character.isDigit(c)) {
-                sbr.append(c);
-                digitIdentified = true;
-                if (!sbr.toString().equals("-")) {
-                    try {
-                        val = Long.parseLong(sbr.toString());
-                        if (val > Integer.MAX_VALUE) {
-                            val = Integer.MAX_VALUE;
-                            return (int) val;
-                        } else if (val < Integer.MIN_VALUE) {
-                            val = Integer.MIN_VALUE;
-                            return (int) val;
+                } else if (Character.isDigit(c)) {
+                    sbr.append(c);
+                    digitIdentified = true;
+                    if (!sbr.toString().equals("-")) {
+                        try {
+                            val = Long.parseLong(sbr.toString());
+                            if (val > Integer.MAX_VALUE) {
+                                val = Integer.MAX_VALUE;
+                                return (int) val;
+                            } else if (val < Integer.MIN_VALUE) {
+                                val = Integer.MIN_VALUE;
+                                return (int) val;
+                            }
+                        } catch (NumberFormatException ignored) {
                         }
-                    } catch (NumberFormatException e) {
                     }
-                }
 
-            } else if (digitIdentified && !Character.isDigit(c)) {
-                break;
-            } else {
-                break;
+                } else if (digitIdentified && !Character.isDigit(c)) {
+                    break;
+                } else {
+                    break;
+                }
             }
         }
 
         if (!sbr.toString().equals("-") && !sbr.toString().equals("")) {
             try {
                 val = Long.parseLong(sbr.toString());
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException ignored) {
             }
         }
 
