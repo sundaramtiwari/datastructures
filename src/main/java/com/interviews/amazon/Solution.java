@@ -50,9 +50,9 @@ public class Solution {
         List<Map.Entry<String, Integer>> list = new ArrayList<>(topCompetitorsMap.entrySet());
         list.sort(new ValueThenKeyComparator<>());
 
-        for (int i = 0; i < list.size(); i++) {
+        for (Map.Entry<String, Integer> stringIntegerEntry : list) {
             if (topNCompetitorsList.size() < topNCompetitors)
-                topNCompetitorsList.add(list.get(i).getKey());
+                topNCompetitorsList.add(stringIntegerEntry.getKey());
             else
                 break;
         }
