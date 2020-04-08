@@ -1,4 +1,4 @@
-package com.interviews.solution;
+package com.interviews.glovo;
 
 import java.math.BigInteger;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.interviews.solution;
+package com.interviews.glovo;
 
 public class MatrixColouring {
 
