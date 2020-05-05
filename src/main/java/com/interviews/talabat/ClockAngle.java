@@ -16,7 +16,7 @@ public class ClockAngle {
 
     private static final int minuteDegrees = 360 / 60;
 
-    private static final double minuteDeviation = Double.valueOf(hourDegrees) / 60;
+    private static final double minuteDeviation = (double) hourDegrees / 60;
 
     private static int findClockAngle(int hour, int min) {
         if (hour > 12)
